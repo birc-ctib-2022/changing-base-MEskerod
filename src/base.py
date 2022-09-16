@@ -29,4 +29,11 @@ def change_to_base(n: int, b: int) -> str:
     '1F'
     """
     assert 2 <= b <= 16
-    return ''  # FIXME: return n in the right base
+    assert n>0
+
+    x=[]
+    while n:
+        x.append(digits[n%b])
+        n //=b
+    result = ''.join(reversed(x))
+    return result  # FIXME: return n in the right base
